@@ -35,11 +35,12 @@ class Hangman extends Component {
   */
   guessedWord() {
     return this.state.answer
-      .split("")
+      .split("") //to create an array to map on
       .map((ltr) => (this.state.guessed.has(ltr) ? ltr : "_"));
+    //.has is bind with the set method & also we can use .add
   }
 
-  /** handleGuest: handle a guessed letter:
+  /** handleGuess: handle a guessed letter:
     - add to guessed letters
     - if not in answer, increase number-wrong guesses
   */
